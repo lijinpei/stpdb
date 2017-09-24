@@ -1,0 +1,52 @@
+digraph {
+  label="Flow graph of Figure 8.10"
+    subgraph col {
+entry[shape="box", label="ENTRY"]
+b1[shape="box", label="i = 0\l", xlabel="b1"]
+b2[shape="box", label="L1:\l  if i >= n\l    goto L2\l", xlabel="b2"]
+b3[shape="box", label="j = 0\l", xlabel="b3"]
+b4[shape="box", label="L3:\l  if j >= n\l    goto L4\l", xlabel="b4"]
+b5[shape="box", label="t1 = j * 8\lt2 = i * (c.colSize * 8)\lt3 = i + j\lt4 = t2 + t3\lc[t4] = 0.0\lj = j + 1\lgoto L3\l", xlabel="b5"]
+b6[shape="box", label="L4:\l  i = i + 1\l  goto L1\l", xlabel="b6"]
+b7[shape="box", label="L2:\l  i = 0\l", xlabel="b7"]
+b8[shape="box", label="L5:\l  if i >= n\l    goto L6", xlabel="b8"]
+b9[shape="box", label="j = 0\l", xlabel="b9"]
+b10[shape="box", label="L7:\l  if j >= n\l    goto L8\l", xlabel="b10"]
+b11[shape="box", label="j = j + 1\lk = 0\l", xlabel="b11"]
+b12[shape="box", label="L9:\l  if k >= n\l    goto L10\l", xlabel="b12"]
+b13[shape="box", label="k = k + 1\lt5 = j * 8\lt6 = k * (b.colSize * 8)\lt7 = t5 + t6\lt8 = k * 8\lt9 = i * (a.colSize * 8)\lt10 = t9 + t8\lt11 = i * ( c.colSize * 8)\lt12 =  t11 + t5\lt13 = a[10] * b[t7]\lc[t12] = c[t12] + t13\lgoto L9\l", xlabel="b13"]
+b14[shape="box", label="L10:\l  goto L7\l", xlabel="b14"]
+b15[shape="box", label="L8:\l  i = i + 1\l  goto L5\l", xlabel="b15"]
+b16[shape="box", label="L6:\l", xlabel="b16"]
+exit[shape="box", label="EXIT"]
+
+entry:s -> b1:n;
+b1:s -> b2:n;
+b2:s -> b3:n;
+b3:s -> b4:n;
+b4:s -> b5:n;
+b5:s -> b6:n[style=invis];
+b6:s -> b7:n[style=invis];
+b7:s -> b8:n;
+b8:s -> b9:n;
+b9:s -> b10:n;
+b10:s -> b11:n;
+b11:s -> b12:n;
+b12:s -> b13:n;
+b13:s -> b14:n[style=invis];
+b14:s -> b15:n[style=invis];
+b15:s -> b16:n[style=invis];
+b16:s -> exit:n;
+    }
+b2:se -> b7:ne;
+b4:se -> b6:ne;
+b8:se -> b16:ne;
+b10:se -> b15:ne;
+b12:se -> b14:ne;
+
+b4:nw -> b5:sw[dir=back];
+b2:nw -> b6:sw[dir=back];
+b12:nw -> b13:sw[dir=back];
+b10:nw -> b14:sw[dir=back];
+b8:nw -> b15:sw[dir=back];
+}

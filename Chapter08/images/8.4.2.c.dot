@@ -1,0 +1,39 @@
+digraph {
+  label="Flow graph of Figure 8.10"
+    subgraph col {
+entry[shape="box", label="ENTRY"]
+b1[shape="box", label="i = 2\l", xlabel="b1"]
+b2[shape="box", label="L1:\l  if i > n goto L2\l", xlabel="b2"]
+b3[shape="box", label="  a[i] = TRUE\l  i = i + 1\l  goto L1\l", xlabel="b3"]
+b4[shape="box", label="L2:\l  count = 0\l  s = sqrt(n)\l  i = 2\l", xlabel="b4"]
+b5[shape="box", label="L3:\l  if i > s goto L4\l", xlabel="b5"]
+b6[shape="box", label="  if not a[i] goto L5\l", xlabel="b6"]
+b7[shape="box", label="  count = count + 1\l  j = 2 * i\l", xlabel="b7"]
+b8[shape="box", label="L6:\l  if j > n goto L5\l", xlabel="b8"]
+b9[shape="box", label="  a[j] = FALSE\l  j = j + i\l  goto L6\l", xlabel="b9"]
+b10[shape="box", label="L5:\l  i = i + 1\l  goto L3\l", xlabel="b10"]
+b11[shape="box", label="L4:\l", xlabel="b11"]
+exit[shape="box", label="EXIT"]
+
+entry:s -> b1:n;
+b1:s -> b2:n;
+b2:s -> b3:n;
+b3:s -> b4:n[style=invis];
+b4:s -> b5:n;
+b5:s -> b6:n;
+b6:s -> b7:n;
+b7:s -> b8:n;
+b8:s -> b9:n;
+b9:s -> b10:n[style=invis];
+b10:s -> b11:n[style=invis];
+b11:s -> exit;
+    }
+b2:se -> b4:ne;
+b5:se -> b11:ne;
+b6:se -> b10:ne;
+b8:se -> b10:ne;
+
+b2:nw -> b3:sw[dir=back];
+b8:nw -> b9:sw[dir=back];
+b5:nw -> b10:sw[dir=back];
+}
