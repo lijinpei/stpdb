@@ -1,0 +1,19 @@
+digraph {
+  node[shape=none];
+  edge [arrowhead=none,arrowtail=none];
+
+  b0[label=b0];
+  c0[label=c0];
+  d1[label="*", xlabel="d, b", shape=circle];
+  d1->b0;
+  d1->c0;
+
+  a0[label=a0];
+  e1[label="+", xlabel=e, shape=circle];
+  e1->a0;
+  e1->b0;
+
+  a1[label="-", xlabel=a, shape=circle];
+  a1->e1;
+  a1->d1;
+}

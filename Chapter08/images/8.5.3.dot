@@ -1,0 +1,50 @@
+digraph {
+  node[shape=none];
+  edge [arrowhead=none,arrowtail=none];
+
+  i0[label=i0];
+  c1[label=1];
+  t5[label="-", xlabel=t5, shape=circle];
+  t5->i0;
+  t5->c1;
+  {
+    rank = same;
+    i0->c1[style = invis];
+  }
+  c2[label=88];
+  t6[label="*", xlabel=t6, shape=circle];
+  t6->c2;
+  t6->t5;
+  {
+    rank = same;
+    c2->t5[style = invis];
+  }
+
+  a[label=a];
+  c3[label="1.0"];
+  arr1[label="[]=", shape=oval];
+  arr1->a;
+  arr1->t6;
+  arr1->c3;
+  {
+    rank = same;
+    a->t6->c3[style = invis];
+  }
+
+  i1[label="+", xlabel=i1, shape=circle];
+  i1->i0;
+  i1->c1;
+  {
+    rank = same;
+    i0->c1[style = invis];
+  }
+
+  c4[label=10];
+  tmp[label="cmp", xlabel="tmp", shape=circle];
+  tmp->i1;
+  tmp->c4;
+  {
+    rank = same;
+    i1->c4[style = invis];
+  }
+}

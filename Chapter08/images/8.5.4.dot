@@ -1,0 +1,70 @@
+digraph {
+  node[shape=none];
+  edge [arrowhead=none,arrowtail=none];
+
+  i0[label=i0];
+  c1[label=10];
+  t1[label="*", xlabel=t1, shape=circle];
+  t1->i0;
+  t1->c1;
+  {
+    rank = same;
+    c1->i0[style = invis];
+  }
+
+  j0[label=j0];
+  t2[label="+", xlabel=t2, shape=circle];
+  t2->t1;
+  t2->j0;
+  {
+    rank = same;
+    t1->j0[style = invis];
+  }
+
+  c2[label=8];
+  t3[label="*", xlabel=t3, shape=circle];
+  t3->c2;
+  t3->t2;
+  {
+    rank = same;
+    c2->t2[style = invis];
+  }
+
+  c4[label=88];
+  t4[label="-", xlabel=t4, shape=circle];
+  t4->t3;
+  t4->c4;
+  {
+    rank = same;
+    t3->c4[style = invis];
+  }
+
+  arr1[label="[]=", shape=oval];
+  c5[label="0.0"];
+  a[label=a];
+  arr1->a;
+  arr1->t4;
+  arr1->c5;
+  {
+    rank = same;
+    a->t4->c5[style = invis];
+  }
+
+  c6[label=1];
+  j1[label="+", xlabel=j1, shape=circle];
+  j1->j0;
+  j1->c6;
+  {
+    rank = same;
+    j0->c6[style = invis];
+  }
+
+  c7[label=10];
+  tmp[label="cmp", xlabel="tmp", shape=circle];
+  tmp->j1;
+  tmp->c7;
+  {
+    rank = same;
+    j1->c7[style = invis];
+  }
+}
