@@ -1,0 +1,18 @@
+strict graph {
+  // B1
+  // i1
+  a--b;
+  a--c;
+  a--d;
+  a--f;
+  // i2
+  d--a;
+  d--b;
+  d--c;
+  d--f;
+  //i3
+  e--a;
+  e--c;
+  e--d;
+  e--f;
+}

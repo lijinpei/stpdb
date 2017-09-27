@@ -1,0 +1,8 @@
+strict graph {
+  //B4
+  //i1
+  b--c;
+  b--d;
+  b--e;
+  b--f;
+}
