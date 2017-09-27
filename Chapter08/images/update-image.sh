@@ -11,3 +11,6 @@ dot -Tsvg -o 8.8.1.B1.svg 8.8.1.B1.dot
 dot -Tsvg -o 8.8.1.B2.svg 8.8.1.B2.dot
 dot -Tsvg -o 8.8.1.B3.svg 8.8.1.B3.dot
 dot -Tsvg -o 8.8.1.B4.svg 8.8.1.B4.dot
+dot -Tsvg -o 8.9.1.a.svg 8.9.1.a.dot
+dot -Tsvg -o 8.9.1.b.svg 8.9.1.b.dot
+dot -Tsvg -o 8.9.1.c.svg 8.9.1.c.dot

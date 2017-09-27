@@ -1,0 +1,22 @@
+digraph {
+  node[shape=none];
+  edge [arrowhead=none,arrowtail=none];
+
+  x1[label=Mx];
+  c1[label="C1"];
+  n1[label="+"];
+  n1->x1;
+  n1->c1;
+  {
+    rank = same;
+    x1->c1[style = invis];
+  }
+  x2[label="Mx"];
+  n2[label="="];
+  n2->x2;
+  n2->n1;
+  {
+    rank=same;
+    x2->n1[style = invis];
+  }
+}

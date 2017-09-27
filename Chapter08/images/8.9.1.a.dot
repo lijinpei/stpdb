@@ -1,0 +1,41 @@
+digraph {
+  node[shape=none];
+  edge [arrowhead=none,arrowtail=none];
+
+  a[label=Ma];
+  b[label=Mb];
+  n1[label="*"];
+  n1->a;
+  n1->b;
+  {
+    rank = same;
+    a->b[style = invis];
+  }
+
+  c[label=Mc];
+  d[label=Md];
+  n2[label="*"];
+  n2->c;
+  n2->d;
+  {
+    rank = same;
+    c->d[style = invis];
+  }
+
+  n3[label="+"];
+  n3->n1;
+  n3->n2;
+  {
+    rank = same;
+    n1->n2[style = invis];
+  }
+
+  x[label=Mx];
+  n4[label="="];
+  n4->x;
+  n4->n3;
+  {
+    rank = same;
+    x->n3[style = invis];
+  }
+}
